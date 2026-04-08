@@ -1,0 +1,27 @@
+<article id="optredens">
+    <h1>Optredens</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Omschrijving</th>
+                <th>Locatie</th>
+                <th>Datum</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php if (count($gigs) == 0): ?>
+                <tr>
+                    <td colspan="3" style="text-align: center; font-style: italic;">Op dit moment staan er geen (openbare) optredens gepland.</td>
+                </tr>
+            <?php else: ?>
+                <?php foreach ($gigs as $key => $gig): ?>
+                <tr <?= $key % 2 == 1 ? 'class="white"' : '' ?>>
+                    <td><?= $gig[3] ? '<a href="' . $gig[3] . '">' . $gig[0] . '</a>' : $gig[0] ?></td>
+                    <td><?= $gig[1] ?></td>
+                    <td><?= $gig[2] ?></td>
+                </tr>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </tbody>
+    </table>
+</article>

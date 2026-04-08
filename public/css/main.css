@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2family=Fira+Sans:wght@300&family=Montserrat:wght@700&display=swap');
+
+:root {
+    --color-1: #14121d;
+    --color-2: #1f1c28;
+    --color-3: #1f1c28;
+
+    --white: #fdfdfd;
+    --black: #444;
+    --grey: #ccc;
+    
+    --text-font: "Fira Sans", sans-serif;
+    --heading-font: "Montserrat", sans-serif;
+
+    --border-radius: 10px;
+    --content-max-width: 480px; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-size-adjust: none;
+      -webkit-text-size-adjust: none;
+      -moz-text-size-adjust: none;
+      -ms-text-size-adjust: none;
+}
+
+html, body {
+    background: #fdfdfd;
+    text-align: justify;
+    font-family: "Fira Sans", sans-serif;
+    font-size: 16px;
+    line-height: 2rem;
+    color: #444;
+}
+
+main, header, footer {
+    padding: 1rem;
+    width: 100%;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+}
+
+article {
+    margin: 2rem 0;
+    overflow: hidden;
+}
+
+nav {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    background:#fdfdfd;
+    padding: 0.5rem;
+    max-width: var(--content-max-width);
+    width: 100%;
+    margin: 0 auto;
+}
+nav.fixed {
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 99;
+    max-width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: position 0.5s ease, background 0.5s ease, box-shadow 0.5s ease;
+}
+
+ul {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+small {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    display: block;
+    text-align: center;
+}
+
+h1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+p {
+    margin: 2rem 0;
+}
+
+a {
+    color: #444;
+    display: inline-block;
+}
+a:active, button:not(.lty-playbtn):active {
+    transform: translateY(1px);
+}
+
+img {
+    border-radius: 50%;
+    box-shadow: 
+        0 0 0 2px rgb(255, 255, 255),
+        0 0 0 4px rgba(0, 0, 255, 0.5);
+    width: 12rem;
+    height: 12rem;
+    display: block;
+    margin: 1rem auto;
+    object-fit: cover;
+    object-position: top;
+    opacity: 0.8;
+    transition: opacity 1s ease, box-shadow 1s ease, transform 1s ease;
+}
+img:hover {
+    opacity: 1;
+    box-shadow: 
+        0 0 0 2px rgb(255, 255, 255),
+        0 0 0 4px rgb(0, 0, 255, 1);
+    transform:
+        scale(1.15)
+        rotate(15deg);
+}
+
+svg {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    pointer-events: none;
+    fill: none;
+    stroke-width: 1.5px;
+    stroke: currentColor;
+    margin-right: 0.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+    margin-top: 2rem;
+}
+thead {
+    font-weight: bold;
+    text-transform: uppercase;
+    border-top: 1px solid rgba(0, 0, 255, 1);
+    border-bottom: 1px solid rgba(0, 0, 255, 1);
+    color:rgba(0, 0, 255, 0.5)
+}
+td, th {
+    padding: 1rem;
+}
+tr.white {
+    background:#eee;
+}
+
+.video-container {
+    border-radius: 1rem;
+}
+
+footer li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    line-height: 3rem;
+}
+
+.up {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    top: auto;
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+    transform: scale(0);
+}
+.up svg {
+    fill: rgba(0, 0, 255, 0.5);
+    stroke: #fdfdfd;
+    margin-right: 0;
+    width: 3rem;
+    height: 3rem;
+}
+.up.fixed {
+    opacity: 1;
+    transform: scale(1);
+}
